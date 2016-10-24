@@ -1,0 +1,28 @@
+<%
+  require "uri"
+
+  if ENV["DATABASE_URL_TEST"].present?
+    test_uri = URI.parse(ENV["DATABASE_URL_TEST"])
+    if test_uri.present? && test_uri.hostname != "localhost"
+      raise "DATABASE_URL_TEST should always point to localhost: #{test_uri}"
+    end
+  end
+%>
+
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  url: <%= ENV["DATABASE_URL"] %>
+
+test:
+  <<: *defaults
+  url: <%= ENV["DATABASE_URL_TEST"] %>
+
+development:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
