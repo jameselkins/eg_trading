@@ -1,0 +1,10 @@
+= simple_form_for(Produce.new) do |f|
+  = f.input :on_property, label: 'Is this food on your property?'
+  = f.input :headline, label: 'Tell us what you are growing'
+  = f.input :is_ripe, label: 'Is it ripe?'
+  = f.input :is_growing, label: 'Is it growing?'
+  = f.input :description, label: 'Describe your produce'
+  = f.input :farm_address, label: 'Tell us where your produce is'
+  = f.input :price, label: 'Enter your selling price'
+  = f.input :price_measurement, label: 'Measurement'
+  = f.button :submit

@@ -13,6 +13,7 @@ gem 'date_validator'
 gem 'paranoia'
 gem 'paper_trail'
 gem 'will_paginate'
+gem 'geocoder'
 
 ## background jobs ##
 gem 'resque'
@@ -30,6 +31,7 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'cocoon'
+gem 'gmaps4rails'
 
 ## authentication/authorization ##
 gem 'devise'

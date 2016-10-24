@@ -1,0 +1,49 @@
+%nav.navbar.navbar-default
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "EverGreen Labs", root_path, class: 'navbar-brand'
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "#"}
+            Fresh Food!
+            %span.sr-only (current)
+        %li
+          %a{:href => "#"} Tasty Organic Food!
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Hella Free!
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href => "#"} No cost
+            %li
+              %a{:href => "#"} Amazeballs
+            %li
+              %a{:href => "#"} it's fo free
+            %li.divider
+            %li
+              %a{:href => "#"} Could not be more free!
+            %li.divider
+            %li
+              %a{:href => "#"} Freer than speech in a communist country
+      %form.navbar-form.navbar-left{:role => "search"}
+        .form-group
+          %input.form-control{:placeholder => "Enter Your Location", :type => "text"}/
+        %button.btn.btn-default{:type => "submit"} Submit
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to "Post Your Food!", new_produce_path
+        - if signed_in?
+          %li
+            = link_to "Sign Out", destroy_user_session_path
+        - else
+          %li
+            = link_to "Sign Up", new_user_registration_path
+          %li
+            = link_to "Login In", new_user_session_path
